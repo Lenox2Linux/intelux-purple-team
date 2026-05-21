@@ -80,7 +80,7 @@ Wazuh v4.14.5 — 10 agents enrolled across all nodes.
 ## Repo Structure
 
 ```
-intelux/
+intelux-purple-team/
 ├── README.md                  ← You are here
 ├── PHASES.md                  ← Phase summary index
 ├── phases/                    ← Full build narrative by phase
