@@ -55,16 +55,25 @@ This repo documents the full build journey — every victory, every failure, and
 
 ## SIEM Coverage
 
-Wazuh v4.14.5 — 10 agents enrolled across all nodes.
+Wazuh v4.14.5 — 11 agents enrolled across all nodes.
 
-| Agent Group | Members |
-|-------------|---------|
-| default | BLU-01, BLU-02, BLU-03, ADM-01 |
-| red-team | RED-01, RED-02, RED-03 |
-| CLIENTS | WKS-03, WKS-04 |
-| SERVER | DC-01 |
+| Agent ID | Name | Group | OS |
+|----------|------|-------|----|
+| 001 | INTELUX-BLU-01 | default | Debian 12 |
+| 002 | INTELUX-BLU-02 | default | Debian 12 |
+| 003 | INTELUX-BLU-03 | default | Debian 12 |
+| 004 | INTELUX-ADM-01 | default | Windows 10 |
+| 005 | INTELUX-RED-01 | red-team | Debian 12 |
+| 006 | INTELUX-RED-02 | red-team | Debian 12 |
+| 007 | INTELUX-RED-03 | red-team | Debian 12 |
+| 011 | INTELUX-DC-01 | SERVER | Windows Server 2022 |
+| 012 | INTELUX-WKS-03 | CLIENTS | Windows 10 |
+| 013 | INTELUX-WKS-04 | CLIENTS | Windows 10 |
+| 014 | INTELUX-FW-01 | default | FreeBSD 14.0 (pfSense) |
 
 > KLI-01 has no Wazuh agent — intentional OPSEC decision.
+
+**Suricata IDS** is deployed on FW-01 across WAN (em0) and LAN trunk (ue0) in IDS mode. EVE JSON logs forwarded to Wazuh via agent 014. See [docs/INTELUX-BUILD-002-Suricata-Wazuh-Integration.md](docs/INTELUX-BUILD-002-Suricata-Wazuh-Integration.md).
 
 ---
 
@@ -93,7 +102,7 @@ intelux-purple-team/
 
 ## Tools & Stack
 
-`pfSense CE` `Proxmox VE` `Wazuh v4.14.5` `Kali Linux` `Windows Server 2022`  
+`pfSense CE` `Proxmox VE` `Wazuh v4.14.5` `Suricata` `Kali Linux` `Windows Server 2022`  
 `Active Directory` `Netgear GS308E` `Debian 12` `xfreerdp` `Nmap` `Wireshark`
 
 ---
